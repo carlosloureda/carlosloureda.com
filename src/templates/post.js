@@ -7,10 +7,8 @@ import { css } from "@emotion/react";
 import Container from "components/container";
 import Layout from "components/layout";
 import Share from "components/share";
-import SubscribeForm, { TinyLetterSubscribe } from "components/forms/subscribe";
+import SubscribeForm from "components/forms/subscribe";
 import BlogPostFooter from "components/blog-post-footer";
-import EpicReactCta from "components/epic-react-cta";
-import TestingCta from "components/testing-cta";
 import Markdown from "react-markdown";
 import { fonts } from "../lib/typography";
 import config from "../../config/website";
@@ -32,7 +30,7 @@ export default function PostPage({ data: { site, mdx } }) {
     banner,
     bannerCredit,
     noFooter,
-    keywords,
+    //keywords,
   } = mdx.fields;
 
   const blogPostUrl = `${config.siteUrl}${slug}`;
@@ -141,14 +139,6 @@ export default function PostPage({ data: { site, mdx } }) {
           twitterHandle={config.twitterHandle}
         />
       </Container>
-      <div css={{ display: "grid", gridGap: 20 }}>
-        {keywords.map((keyword) => keyword.toLowerCase()).includes("react") && (
-          <EpicReactCta />
-        )}
-        {keywords
-          .map((keyword) => keyword.toLowerCase())
-          .includes("testing") && <TestingCta />}
-      </div>
       <Container>
         <BlogPostFooter />
       </Container>

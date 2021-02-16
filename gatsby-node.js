@@ -46,7 +46,6 @@ function createBlogPages({ data, actions }) {
   if (!data.edges.length) {
     throw new Error("There are no posts!");
   }
-
   const { edges } = data;
   const { createRedirect, createPage } = actions;
   createPosts(createPage, createRedirect, edges);
@@ -100,6 +99,14 @@ const createPages = async ({ actions, graphql }) => {
     blogPath: "/blog",
     data: blog,
     actions,
+  });
+};
+
+const onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
+    },
   });
 };
 
@@ -284,7 +291,7 @@ function onCreateMdxNode({ node, getNode, actions }) {
 
 module.exports = {
   createPages,
-  //   onCreateWebpackConfig,
+  onCreateWebpackConfig,
   onCreateNode,
   //   onPreBootstrap,
   //   onPostBuild,
