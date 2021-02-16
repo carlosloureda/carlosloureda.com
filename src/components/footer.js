@@ -1,15 +1,16 @@
-import * as React from 'react'
-import Link from '../components/link'
-import {css} from '@emotion/react'
-import theme from '../../config/theme'
-import {bpMaxSM} from '../lib/breakpoints'
-import SubscribeForm from './forms/subscribe'
-import {Twitter, GitHub, YouTube, RSS} from './social'
-import Container from './container'
+import * as React from "react";
+import Link from "../components/link";
+import { css } from "@emotion/react";
+import theme from "../../config/theme";
+import { bpMaxSM } from "../lib/breakpoints";
+import SubscribeForm from "./forms/subscribe";
+import { Twitter, GitHub, YouTube, RSS } from "./social";
+import Container from "./container";
 
-import Signature from '../images/signature.png'
+import Signature from "../images/signature.png";
 
-const Footer = ({subscribeForm = <SubscribeForm />, maxWidth}) => (
+//const Footer = ({subscribeForm = <SubscribeForm />, maxWidth}) => (
+const Footer = ({ subscribeForm, maxWidth }) => (
   <footer
     css={css`
       background: ${theme.colors.purple_dark};
@@ -32,7 +33,7 @@ const Footer = ({subscribeForm = <SubscribeForm />, maxWidth}) => (
       `}
     >
       {subscribeForm ? (
-        <div css={{marginTop: -40}}>
+        <div css={{ marginTop: -40 }}>
           {subscribeForm}
           <br />
           <br />
@@ -62,7 +63,7 @@ const Footer = ({subscribeForm = <SubscribeForm />, maxWidth}) => (
           <RSS />
         </div>
 
-        <Link to="/" aria-label="Return to homepage">
+        {/* <Link to="/" aria-label="Return to homepage">
           <img
             src={Signature}
             alt="Kent C. Dodds"
@@ -70,10 +71,10 @@ const Footer = ({subscribeForm = <SubscribeForm />, maxWidth}) => (
               max-width: 100px;
             `}
           />
-        </Link>
+        </Link> */}
       </div>
     </Container>
   </footer>
-)
+);
 
-export default Footer
+export default Footer;

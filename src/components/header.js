@@ -1,61 +1,61 @@
-import * as React from 'react'
-import Link from './link'
-import {css} from '@emotion/react'
-import styled from '@emotion/styled'
-import theme from '../../config/theme'
-import {fonts} from '../lib/typography'
-import kent from '../images/kent.png'
-import MobileNav from './mobile-nav'
-import Container from './container'
-import {bpMaxSM} from '../lib/breakpoints'
-import {lighten} from 'polished'
+import * as React from "react";
+import Link from "./link";
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
+import theme from "../../config/theme";
+import { fonts } from "../lib/typography";
+import kent from "../images/kent.png";
+import MobileNav from "./mobile-nav";
+import Container from "./container";
+import { bpMaxSM } from "../lib/breakpoints";
+import { lighten } from "polished";
 
-function HeaderLink({headerColor, activeClassName = 'active', ...props}) {
+function HeaderLink({ headerColor, activeClassName = "active", ...props }) {
   return (
     <Link
       activeClassName={activeClassName}
       partiallyActive={true}
       css={{
-        textDecoration: 'none',
+        textDecoration: "none",
         color: headerColor ? headerColor : theme.colors.body_color,
-        '&:hover,&:focus': {
+        "&:hover,&:focus": {
           background:
             headerColor === theme.colors.white
-              ? 'rgba(40, 28, 77, 0.3)'
+              ? "rgba(40, 28, 77, 0.3)"
               : lighten(0.4, theme.brand.primary),
           color:
             headerColor === theme.colors.white
-              ? 'white'
+              ? "white"
               : theme.colors.link_color_hover,
         },
-        '&.active': {
+        "&.active": {
           background:
             headerColor === theme.colors.white
-              ? 'rgba(40, 28, 77, 0.3)'
+              ? "rgba(40, 28, 77, 0.3)"
               : lighten(0.4, theme.brand.primary),
         },
       }}
       {...props}
     />
-  )
+  );
 }
 
 const NavLink = styled(HeaderLink)({
-  padding: '8px 10px',
-  borderRadius: '3px',
-  background: 'transparent',
-  '& + &': {marginLeft: 10},
+  padding: "8px 10px",
+  borderRadius: "3px",
+  background: "transparent",
+  "& + &": { marginLeft: 10 },
   [bpMaxSM]: {
-    display: 'none',
+    display: "none",
   },
-})
+});
 
 function Header({
   dark,
-  bgColor = 'none',
+  bgColor = "none",
   siteTitle,
-  headerLink = '/',
-  headerColor = 'black',
+  headerLink = "/",
+  headerColor = "black",
   fixed = false,
   headerImage = true,
   maxWidth = 720,
@@ -70,9 +70,9 @@ function Header({
         ${bpMaxSM} {
           padding: 35px 0 0 0;
         }
-        background: ${dark ? '#090909' : `${bgColor}` || 'none'};
+        background: ${dark ? "#090909" : `${bgColor}` || "none"};
         z-index: 10;
-        position: ${fixed ? 'fixed' : 'absolute'};
+        position: ${fixed ? "fixed" : "absolute"};
         top: 0;
         font-family: ${fonts.light};
       `}
@@ -80,10 +80,10 @@ function Header({
       <Container maxWidth={maxWidth} noVerticalPadding>
         <nav
           css={{
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
           }}
         >
           <HeaderLink
@@ -92,27 +92,27 @@ function Header({
             activeClassName="none"
             headerColor={headerColor}
             css={{
-              position: 'relative',
+              position: "relative",
               fontFamily: fonts.regular,
-              display: 'flex',
-              alignItems: 'center',
+              display: "flex",
+              alignItems: "center",
               img: {
                 marginBottom: 0,
-                maxWidth: '50px',
-                position: 'absolute',
-                borderRadius: '100%',
+                maxWidth: "50px",
+                position: "absolute",
+                borderRadius: "100%",
                 background:
-                  headerColor === '#fff' ? 'rgba(40, 28, 77, 0.7)' : '#f1f1f1',
+                  headerColor === "#fff" ? "rgba(40, 28, 77, 0.7)" : "#f1f1f1",
               },
-              ':hover, :focus': {
-                background: 'transparent',
+              ":hover, :focus": {
+                background: "transparent",
               },
               span: {
-                transform: headerImage && 'translateX(60px)',
+                transform: headerImage && "translateX(60px)",
               },
             }}
           >
-            {headerImage && <img src={kent} alt="Kent C. Dodds" />}{' '}
+            {headerImage && <img src={kent} alt="Carlos Loureda" />}{" "}
             <span>{siteTitle}</span>
           </HeaderLink>
           <div
@@ -140,6 +140,20 @@ function Header({
               Blog
             </NavLink>
             <NavLink
+              headerColor={headerColor}
+              to="/curriculum/"
+              aria-label="View curriculum page"
+            >
+              Curriculum
+            </NavLink>
+            <NavLink
+              headerColor={headerColor}
+              to="/portfolio/"
+              aria-label="View portfolio page"
+            >
+              Portfolio
+            </NavLink>
+            {/* <NavLink
               headerColor={headerColor}
               to="/workshops/"
               aria-label="View workshops page"
@@ -173,12 +187,12 @@ function Header({
               aria-label="View about page"
             >
               About
-            </NavLink>
+            </NavLink> */}
           </div>
         </nav>
       </Container>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

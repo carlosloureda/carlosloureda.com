@@ -27,6 +27,7 @@ module.exports = {
   twitterHandle: "@carlosloureda",
   github: "https://github.com/carlosloureda/",
   linkedin: "https://www.linkedin.com/in/carlosloureda/",
-  youtube: "",
-  rss: "",
+  youtube: "https://www.youtube.com/channel/UCQecfidvV4U8EKkH7iR1Dsg",
+  // TODO:make this work
+  rss: "https://carlosloureda.com/blog/rss.xml",
 };

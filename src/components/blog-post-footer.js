@@ -1,9 +1,9 @@
-import * as React from 'react'
-import kent from '../images/kent.png'
+import * as React from "react";
+import kent from "../images/kent.png";
 
 function BlogFooter() {
   return (
-    <div style={{display: 'flex'}}>
+    <div style={{ display: "flex" }}>
       <div
         style={{
           paddingRight: 20,
@@ -11,10 +11,10 @@ function BlogFooter() {
       >
         <img
           src={kent}
-          alt="Kent C. Dodds"
+          alt="Carlos Loureda"
           style={{
             maxWidth: 80,
-            borderRadius: '50%',
+            borderRadius: "50%",
           }}
         />
       </div>
@@ -28,7 +28,7 @@ function BlogFooter() {
         `}
       </p>
     </div>
-  )
+  );
 }
 
-export default BlogFooter
+export default BlogFooter;

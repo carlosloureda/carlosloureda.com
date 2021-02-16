@@ -12,7 +12,7 @@ import photoOfKent from "../images/hero/kent.png";
 
 function Hero({
   children,
-  title = `Hi, I'm Kent C. Dodds. I help people make the world better through quality software.`,
+  title = `Aprende desarrollo Software desde Cero, sin atajos, ni trampas.`,
   text,
   background = `url(${heroImageRight}), url(${heroImageLeft}),
   linear-gradient(-213deg, #5e31dc 0%, #3155dc 100%)`,
@@ -60,7 +60,7 @@ function Hero({
           }
         `}
       >
-        <div
+        {/* <div
           css={css`
             display: none;
             visibility: hidden;
@@ -84,7 +84,7 @@ function Hero({
               margin-bottom: 25px;
             }
           `}
-        />
+        /> */}
         <div
           css={css`
             display: flex;
@@ -130,7 +130,7 @@ function Hero({
           )}
           {children}
         </div>
-        <div
+        {/* <div
           css={{
             marginRight: "-160px",
             width: 380,
@@ -145,11 +145,11 @@ function Hero({
           {image && (
             <img
               src={image}
-              alt="Kent C. Dodds"
+              alt="Carlos Loureda"
               css={{ maxWidth: "100%", marginBottom: 0 }}
             />
           )}
-        </div>
+        </div> */}
       </Container>
     </section>
   );

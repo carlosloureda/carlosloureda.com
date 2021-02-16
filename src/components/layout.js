@@ -174,7 +174,7 @@ const DefaultHero = styled.section`
 
 function Layout({
   headerLink,
-  siteTitle = "Kent C. Dodds",
+  siteTitle = "Carlos Loureda",
   frontmatter = {},
   hero = <DefaultHero />,
   subscribeForm,
@@ -262,7 +262,7 @@ function Layout({
             <Footer
               maxWidth={maxWidth}
               author={siteMetadata.author.name}
-              subscribeForm={subscribeForm}
+              // subscribeForm={subscribeForm}
             />
           )}
         </div>
