@@ -94,8 +94,8 @@ function Header({
             css={{
               position: "relative",
               fontFamily: fonts.regular,
-              display: "flex",
-              alignItems: "center",
+              // display: "flex",
+              // alignItems: "center",
               img: {
                 marginBottom: 0,
                 maxWidth: "50px",
@@ -112,7 +112,7 @@ function Header({
               },
             }}
           >
-            {headerImage && <img src={kent} alt="Carlos Loureda" />}{" "}
+            {/* {headerImage && <img src={kent} alt="Carlos Loureda" />}{" "} */}
             <span>{siteTitle}</span>
           </HeaderLink>
           <div

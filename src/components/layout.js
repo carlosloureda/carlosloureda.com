@@ -253,7 +253,7 @@ function Layout({
             bgColor={headerBg}
             headerColor={headerColor}
             fixed={fixedHeader}
-            headerImage={logo}
+            // headerImage={logo}
           />
           <MDXProvider components={mdxComponents}>{children}</MDXProvider>
         </div>
