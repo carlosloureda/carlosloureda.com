@@ -19,12 +19,10 @@ function BlogFooter() {
         />
       </div>
       <p>
-        <strong>Kent C. Dodds</strong>
+        <strong>Carlos Loureda</strong>
         {`
-          is a JavaScript software engineer and teacher. He's taught hundreds
-          of thousands of people how to make the world a better place with
-          quality software development tools and practices. He lives with his
-          wife and four kids in Utah.
+          es un desarrollador Javascript, profesor y mentor. Ha enseñado a cientas de personas como programar, 
+          ser exitoso y no morir en el intento. Vive en La Coruña.
         `}
       </p>
     </div>

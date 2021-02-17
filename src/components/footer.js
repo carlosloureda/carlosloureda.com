@@ -1,13 +1,13 @@
 import * as React from "react";
-import Link from "../components/link";
+// import Link from "../components/link";
 import { css } from "@emotion/react";
 import theme from "../../config/theme";
 import { bpMaxSM } from "../lib/breakpoints";
-import SubscribeForm from "./forms/subscribe";
+// import SubscribeForm from "./forms/subscribe";
 import { Twitter, GitHub, YouTube, RSS } from "./social";
 import Container from "./container";
 
-import Signature from "../images/signature.png";
+// import Signature from "../images/signature.png";
 
 //const Footer = ({subscribeForm = <SubscribeForm />, maxWidth}) => (
 const Footer = ({ subscribeForm, maxWidth }) => (
