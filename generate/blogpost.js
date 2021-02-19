@@ -26,13 +26,13 @@ const formatDate = d =>
 const listify = a =>
   a && a.trim().length
     ? a
-        .split(',')
-        .map(s => s.trim())
-        .filter(Boolean)
+      .split(',')
+      .map(s => s.trim())
+      .filter(Boolean)
     : null
 
 async function generateBlogPost() {
-  const {title, description, categories, keywords} = await inquirer.prompt([
+  const { title, description, categories, keywords } = await inquirer.prompt([
     {
       type: 'input',
       name: 'title',
@@ -89,7 +89,7 @@ async function getBannerPhoto(title, destination) {
     wait: false,
   })
 
-  const {unsplashPhotoId} = await inquirer.prompt([
+  const { unsplashPhotoId } = await inquirer.prompt([
     {
       type: 'input',
       name: 'unsplashPhotoId',
@@ -123,12 +123,12 @@ async function getBannerPhoto(title, destination) {
 async function getPhotoCredit(unsplashPhotoId) {
   const response = await axios({
     url: `https://unsplash.com/photos/${unsplashPhotoId}`,
-    headers: {'User-Agent': fakeUa()},
+    headers: { 'User-Agent': fakeUa() },
   })
   const {
-    groups: {name},
+    groups: { name },
   } = response.data.match(/Photo by (?<name>.*?) on Unsplash/) || {
-    groups: {name: 'Unknown'},
+    groups: { name: 'Unknown' },
   }
   return `Photo by [${name}](https://unsplash.com/photos/${unsplashPhotoId})`
 }

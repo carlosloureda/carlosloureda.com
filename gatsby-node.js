@@ -144,9 +144,8 @@ function onCreateMdxNode({ node, getNode, actions }) {
       isWriting = false;
       isScheduled = true;
     }
-    slug = `/workshops/${
-      node.frontmatter.slug || slugify(node.frontmatter.title)
-    }`;
+    slug = `/workshops/${node.frontmatter.slug || slugify(node.frontmatter.title)
+      }`;
   }
 
   if (node.fileAbsolutePath.includes("content/writing-blog/")) {
@@ -243,7 +242,7 @@ function onCreateMdxNode({ node, getNode, actions }) {
   createNodeField({
     name: "editLink",
     node,
-    value: `https://github.com/kentcdodds/kentcdodds.com/edit/main${node.fileAbsolutePath.replace(
+    value: `https://github.com/carlosloureda/carlosloureda.com/edit/main${node.fileAbsolutePath.replace(
       __dirname,
       ""
     )}`,
@@ -252,7 +251,7 @@ function onCreateMdxNode({ node, getNode, actions }) {
   createNodeField({
     name: "historyLink",
     node,
-    value: `https://github.com/kentcdodds/kentcdodds.com/commits/main${node.fileAbsolutePath.replace(
+    value: `https://github.com/carlosloureda/carlosloureda.com/commits/main${node.fileAbsolutePath.replace(
       __dirname,
       ""
     )}`,
